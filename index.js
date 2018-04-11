@@ -71,8 +71,8 @@ bot.on("message", (message) => {
 
     
 
-	else if( swearWords.some(word => message.content.includes(word)) ) {
-  		message.reply("Oh no you said a bad word!!!");
+	else if( swearWords.some(word => msg.includes(word)) ) {
+  		message.reply("Vous n'ête pas autorisé à dire ceci !");
   		message.delete();
 	}
     
