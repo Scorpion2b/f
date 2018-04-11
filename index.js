@@ -21,9 +21,8 @@ temoin = 0;
 bot.on("message", (message) => {
 
 
-	const blacklist = ["PD","CONNARD","BATARD","FOUTRE","VA TE FAIRE","SUCE","","BITE","FILS DE PUTE","ENCULE","SALE NEGRE","SALE NOIR","SALE JUIF","NAZI","SALOPE","SALOP","SALOPARD","TCHOIN","TEPU","PUTE","CATIN","MANGE TES MORT","NIQUE"];
-	const swearWords = ["darn", "shucks", "frak", "shite"];
-	
+	const swearWords = ["PD","CONNARD","BATARD","FOUTRE","VA TE FAIRE","SUCE","","BITE","FILS DE PUTE","ENCULE","SALE NEGRE","SALE NOIR","SALE JUIF","NAZI","SALOPE","SALOP","SALOPARD","TCHOIN","TEPU","PUTE","CATIN","MANGE TES MORT","NIQUE"];
+
     const argus = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = argus.shift().toLowerCase();
     var msg = message.content.toUpperCase();
@@ -72,17 +71,12 @@ bot.on("message", (message) => {
 
     
 
-	else if( swearWords.some(word => message.content.includes(word)) ) {
-  		message.reply("Oh no you said a bad word!!!");
-  		message.delete();
-	}
 
-    //else if(blacklist.some(word => msg.search(word)))
-    //{
-    //	message.delete();
-    //	message.channel.send("``` C\'est mots sont interdit ! ```")
-    //	return;
-    //}
+    else if( swearWords.some(word => msg.search(word)))
+    {
+    	message.delete();
+    	message.reply("C\'est mots sont interdit !")
+    }
     
 
 // Purge
