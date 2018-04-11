@@ -73,9 +73,6 @@ bot.on("message", (message) => {
     {
     	message.delete();
     	message.channel.send("``` C\'est mots sont interdit ! ```")
-    	guild.addMember(message.author.id);
-    	if (true) {}
-
     	return;
     }
     
