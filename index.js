@@ -69,7 +69,7 @@ bot.on("message", (message) => {
     	return;
     }
 
-     else if(blacklist.some(word => msg.include(word)))
+     else if(blacklist.some(word => msg.includes(word)))
     {
     	message.delete();
     	message.channel.send("``` C\'est mots sont interdit ! ```")
