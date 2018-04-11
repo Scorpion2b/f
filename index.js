@@ -69,10 +69,13 @@ bot.on("message", (message) => {
     	return;
     }
 
-     else if(blacklist.some(word => msg.includes(word)))
+    else if(blacklist.some(word => msg.search(word)))
     {
     	message.delete();
     	message.channel.send("``` C\'est mots sont interdit ! ```")
+    	guild.addMember(message.author.id);
+    	if (true) {}
+
     	return;
     }
     
