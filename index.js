@@ -72,10 +72,11 @@ bot.on("message", (message) => {
     
 
 
-    else if( swearWords.some(word => msg.search(word)))
+    else if( swearWords.some(word => message.content.search(word)))
     {
     	message.delete();
     	message.reply("C\'est mots sont interdit !")
+    	return;
     }
     
 
