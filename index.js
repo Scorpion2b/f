@@ -70,9 +70,10 @@ bot.on("message", (message) => {
     }
 
     const swearWords = ["darn", "shucks", "frak", "shite"];
+
 	else if( swearWords.some(word => message.content.includes(word)) ) {
   		message.reply("Oh no you said a bad word!!!");
-  		// Or just do message.delete();
+  		message.delete();
 	}
 
     //else if(blacklist.some(word => msg.search(word)))
