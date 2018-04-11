@@ -22,7 +22,8 @@ bot.on("message", (message) => {
 
 
 	const blacklist = ["PD","CONNARD","BATARD","FOUTRE","VA TE FAIRE","SUCE","","BITE","FILS DE PUTE","ENCULE","SALE NEGRE","SALE NOIR","SALE JUIF","NAZI","SALOPE","SALOP","SALOPARD","TCHOIN","TEPU","PUTE","CATIN","MANGE TES MORT","NIQUE"];
-
+	const swearWords = ["darn", "shucks", "frak", "shite"];
+	
     const argus = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = argus.shift().toLowerCase();
     var msg = message.content.toUpperCase();
@@ -69,7 +70,7 @@ bot.on("message", (message) => {
     	return;
     }
 
-    const swearWords = ["darn", "shucks", "frak", "shite"];
+    
 
 	else if( swearWords.some(word => message.content.includes(word)) ) {
   		message.reply("Oh no you said a bad word!!!");
