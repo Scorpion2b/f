@@ -33,7 +33,7 @@ bot.on("message", (message) => {
 
 	if (message.channel.type === "dm") 
     {
-  		if (message.author === Client.user) 
+  		if (message.author === bot.user) 
   		{
   		
   		} 
