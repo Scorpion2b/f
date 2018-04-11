@@ -20,6 +20,9 @@ temoin = 0;
 
 bot.on("message", (message) => {
 
+
+	const blacklist = ["PD","CONNARD","BATARD","FOUTRE","VA TE FAIRE","SUCE","","BITE","FILS DE PUTE","ENCULE","SALE NEGRE","SALE NOIR","SALE JUIF","NAZI","SALOPE","SALOP","SALOPARD","TCHOIN","TEPU","PUTE","CATIN","MANGE TES MORT",]
+
     const argus = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = argus.shift().toLowerCase();
     var msg = message.content.toUpperCase();
@@ -66,7 +69,7 @@ bot.on("message", (message) => {
     	return;
     }
 
-     else if(msg.includes("PD"))
+     else if(blacklist.some(word => msg.include(word)))
     {
     	message.delete();
     	message.channel.send("``` C\'est mots sont interdit ! ```")
