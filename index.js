@@ -21,7 +21,7 @@ temoin = 0;
 bot.on("message", (message) => {
 
 
-	const blacklist = ["PD","CONNARD","BATARD","FOUTRE","VA TE FAIRE","SUCE","","BITE","FILS DE PUTE","ENCULE","SALE NEGRE","SALE NOIR","SALE JUIF","NAZI","SALOPE","SALOP","SALOPARD","TCHOIN","TEPU","PUTE","CATIN","MANGE TES MORT",]
+	const blacklist = ["PD","CONNARD","BATARD","FOUTRE","VA TE FAIRE","SUCE","","BITE","FILS DE PUTE","ENCULE","SALE NEGRE","SALE NOIR","SALE JUIF","NAZI","SALOPE","SALOP","SALOPARD","TCHOIN","TEPU","PUTE","CATIN","MANGE TES MORT","NIQUE"];
 
     const argus = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = argus.shift().toLowerCase();
