@@ -22,7 +22,8 @@ bot.on("message", (message) => {
 
     const argus = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = argus.shift().toLowerCase();
-    
+    var msg = message.content.toUpperCase();
+
     let sender = message.author; 
     let cont = message.content.slice(prefix.length).split(" ");
     let args = cont.slice(1);
@@ -57,8 +58,20 @@ bot.on("message", (message) => {
         }
         }})
     }
+
+    //Liste mot banni
     
-    
+    else if(message.author.id === '433646778810630154')
+    {
+    	return;
+    }
+
+     else if(msg.includes("PD"))
+    {
+    	message.delete();
+    	message.author.send("``` C\'est mots sont interdit ! ```")
+    	return;
+    }
     
 
 // Purge
