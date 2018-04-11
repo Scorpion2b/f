@@ -69,12 +69,12 @@ bot.on("message", (message) => {
     	return;
     }
 
-    else if(blacklist.some(word => msg.search(word)))
-    {
-    	message.delete();
-    	message.channel.send("``` C\'est mots sont interdit ! ```")
-    	return;
-    }
+    //else if(blacklist.some(word => msg.search(word)))
+    //{
+    //	message.delete();
+    //	message.channel.send("``` C\'est mots sont interdit ! ```")
+    //	return;
+    //}
     
 
 // Purge
