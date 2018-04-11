@@ -69,7 +69,7 @@ bot.on("message", (message) => {
      else if(msg.includes("PD"))
     {
     	message.delete();
-    	message.author.send("``` C\'est mots sont interdit ! ```")
+    	message.channel.send("``` C\'est mots sont interdit ! ```")
     	return;
     }
     
