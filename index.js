@@ -17,7 +17,7 @@ temoin = 0;
 
 var fs = require('fs');
 
-var userData = JSON.parse(fs.readFileSync('userData.json', 'utf8'));
+var userData = JSON.parse(fs.readFileSync('f/userData.json', 'utf8'));
 
 
 
@@ -103,7 +103,7 @@ bot.on("message", (message) => {
   		}
 
   		userData[sender.id].messagesSent++;
-  		fs.writeFile('userData.json' , JSON.stringify(userData), (err) =>{
+  		fs.writeFile('f/userData.json' , JSON.stringify(userData), (err) =>{
   			if (err) console.error(err);
   		});
   				
