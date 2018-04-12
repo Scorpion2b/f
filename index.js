@@ -15,13 +15,17 @@ var questions = new Array(),
 reponses = new Array(),
 temoin = 0;
 
+var fs = require('fs');
+
+var userData = JSON.parse(fs.readFileSync('userData.json', 'utf8'));
+
 
 
 
 bot.on("message", (message) => {
 
 
-	const swearWords = ["PD", "CONNARD", "BATARD", "FOUTRE", "VA TE FAIRE", "SUCE","BITE","FILS DE PUTE","ENCULE","SALE NEGRE","SALE NOIR","SALE JUIF","NAZI","SALOPE","SALOP","SALOPARD","TCHOIN","TEPU","PUTE","CATIN","MANGE TES MORT","NIQUE"];
+	const swearWords = ["PD", "POULOULOU", "BUMBUMTAM", "SALE ARABE", "SALE ARABE", "SALE ARABE", "CONNARD", "BATARD", "FOUTRE", "VA TE FAIRE", "SUCE", "BITE", "FILS DE PUTE", "ENCULE", "SALE NEGRE","SALE NOIR","SALE JUIF","NAZI","SALOPE","SALOP","SALOPARD","TCHOIN","TEPU","PUTE","CATIN","MANGE TES MORT","NIQUE"];
 
     const argus = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = argus.shift().toLowerCase();
@@ -31,9 +35,12 @@ bot.on("message", (message) => {
     let cont = message.content.slice(prefix.length).split(" ");
     let args = cont.slice(1);
 
-	if (message.channel.type === "dm") 
+
+//message prive
+
+    if (message.channel.type === "dm") 
     {
-  		if (message.author === bot.user) 
+  		if (message.author === Client.user) 
   		{
   		
   		} 
@@ -44,7 +51,9 @@ bot.on("message", (message) => {
   		}
 	} 
 
-		
+
+//help
+
     else if (message.content.startsWith(prefix + "help"))    {
         message.delete();
         message.channel.send({embed: {
@@ -76,6 +85,7 @@ bot.on("message", (message) => {
         }})
     }
 
+
     //Liste mot banni
     
     else if(message.author.id === '433646778810630154')
@@ -88,6 +98,15 @@ bot.on("message", (message) => {
 	else if( swearWords.some(word => msg.includes(word)) ) {
   		message.reply("Vous n'ête pas autorisé à dire ceci !");
   		message.delete();
+  		if (!userData[sender.id]) userData[sender.id] = {
+			messageSent: 0
+  		}
+
+  		userData[sender.id].messagesSent++;
+  		fs.writeFile('userData.json' , JSON.stringify(userData), (err) =>{
+  			if (err) console.error(err);
+  		});
+  				
 	}
     
 
