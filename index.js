@@ -17,7 +17,7 @@ temoin = 0;
 
 var fs = require('fs');
 
-var userData = JSON.parse(fs.readFileSync('f/userData.json', 'utf8'));
+var userData = JSON.parse(fs.readFileSync('userData.json', 'utf8'));
 
 
 
