@@ -103,7 +103,7 @@ bot.on("message", (message) => {
   		}
 
   		userData[sender.id].messagesSent++;
-  		fs.writeFile('f/userData.json' , JSON.stringify(userData), (err) =>{
+  		fs.writeFile('userData.json' , JSON.stringify(userData), (err) =>{
   			if (err) console.error(err);
   		});
   				
